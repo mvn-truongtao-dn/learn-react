@@ -8,8 +8,44 @@ export default class App extends Component {
     super(props);
     this.state = {
       listUser: [{
+        id: 5,
+        name:"tao quang truong",
+        password: "123456789",
+        country: "vn",
+        gender: "male",
+        info: "abcd",
+        accpect: true
+      },
+      {
+        id: 6,
+        name:"hoang duc thanh",
+        password: "123456789",
+        country: "vn",
+        gender: "male",
+        info: "abcd",
+        accpect: true
+      },
+      {
+        id: 7,
+        name:"tao quang truong",
+        password: "123456789",
+        country: "vn",
+        gender: "male",
+        info: "abcd",
+        accpect: true
+      },
+      {
+        id: 8,
+        name:"nguyen thanh long",
+        password: "123456789",
+        country: "vn",
+        gender: "male",
+        info: "abcd",
+        accpect: true
+      },
+      {
         id: 1,
-        name:"ho le huy",
+        name:"tao quang truong",
         password: "123456789",
         country: "vn",
         gender: "male",
@@ -27,7 +63,7 @@ export default class App extends Component {
       },
       {
         id: 3,
-        name:"ho le huy",
+        name:"ho van khoi",
         password: "123456789",
         country: "vn",
         gender: "male",
@@ -36,7 +72,7 @@ export default class App extends Component {
       },
       {
         id: 4,
-        name:"ho le huy",
+        name:"vo duc nhan",
         password: "123456789",
         country: "vn",
         gender: "male",

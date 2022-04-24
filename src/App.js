@@ -99,17 +99,7 @@ export default class App extends Component {
     const data = this.state.listUser.filter(i => i.id !== item.id)
     this.setState({listUser: data})
   }
-  handleAdd(){
-    this.setState(state =>({
-      listUser: [
-        ...state.listUser,
-        {
-          accpect: true
-        }
-      ]
-    }));
-    console.log(this.state.listUser);
-  }
+
   render() {
     console.log(this.state.listUser);
 

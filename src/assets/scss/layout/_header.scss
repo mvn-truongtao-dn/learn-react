@@ -1,0 +1,31 @@
+.page-header {
+  @include pxRem(padding, 10);
+  background: map-get($colors, bg-gray);
+  text-align: center;
+}
+.link-logo {
+  .logo {
+    width: 60px;
+    background-color: map-get($colors, bg-gray);
+  }
+}
+.item-header {
+  display: inline-block;
+  font-size: $font-size-lg;
+  font-weight: map-get($map: $font-weight, $key: medium);
+}
+.item-menu {
+  @extend .item-header;
+  width: 120px;
+  text-transform: uppercase;
+  .item-link {
+    color: map-get($map: $colors, $key: black);
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+.btn-item {
+  @extend .item-header;
+  width: 40px;
+}

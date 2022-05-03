@@ -1,0 +1,30 @@
+.details-product {
+  width: 30%;
+  text-align: center;
+  padding: 10px 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  height: 700px;
+  padding: 30px;
+  margin: 10px 0;
+  .name-product {
+    font-weight: map-get($map: $font-weight, $key: normal);
+    padding: 10px 0;
+  }
+  .price-product {
+    font-size: $font-size-lg;
+    font-weight: map-get($map: $font-weight, $key: medium);
+    padding: 10px 0;
+  }
+  .description-product {
+    font-size: $font-size-lg;
+    padding: 10px 0;
+  }
+}
+.image-product {
+  width: 250px;
+  height: 300px;
+}
+.content-product-deatails {
+  padding: 20px;
+  width: 70%;
+}

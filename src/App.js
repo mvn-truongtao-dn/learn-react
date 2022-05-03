@@ -46,13 +46,6 @@ function App() {
             <Auth />
           </Suspense>
         </Route>
-        {/* <Route path="/app" component={Auth} /> */}
-
-        {/* <Route path="/">
-          <Suspense fallback={<Loading />}>
-            <Features listUser={listUser}></Features>
-          </Suspense>
-        </Route> */}
         <Route path="/">
           <Suspense fallback={<Loading />}>
             <Features listUser={listUser}></Features>

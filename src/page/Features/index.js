@@ -10,7 +10,7 @@ const ProductItem = React.lazy(() => import("./ProductItem/index"));
 const Abouts = React.lazy(() => import("./Abouts/index"));
 const Sales = React.lazy(() => import("./Sales/index"));
 export default function Features({ listUser }) {
-  const {path, url } = useRouteMatch();
+  const { path, url } = useRouteMatch();
   console.log(path);
 
   return (
@@ -19,13 +19,11 @@ export default function Features({ listUser }) {
       <Switch>
         <Route path={`${path}home`}>
           <Home />
-          {/* <Products listUser={listUser} /> */}
-
         </Route>
         <Route path="/products">
-          {/* <Suspense fallback={<Loading />}> */}
+          <Suspense fallback={<Loading />}>
             <Products listUser={listUser} />
-          {/* </Suspense> */}
+          </Suspense>
         </Route>
         <Route path="/product/:productId">
           <Suspense fallback={<Loading />}>

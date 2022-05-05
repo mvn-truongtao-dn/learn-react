@@ -1,17 +1,15 @@
 import React, { useEffect } from "react";
 import { Link, useRouteMatch } from "react-router-dom";
-import {
-  FaSearch,
-  FaUser,
-  FaHeart,
-  FaCartArrowDown,
-  FaArrowRight,
-} from "react-icons/fa";
+import { FaSearch, FaUser, FaHeart, FaCartArrowDown } from "react-icons/fa";
+import { MdOutlineFavoriteBorder } from "react-icons/md";
 import { FiLogIn } from "react-icons/fi";
 import useAuth from "../../../hooks/userAuth";
+import { useSelector } from "react-redux";
 
 export default function Header() {
   let { isLogged, logout } = useAuth();
+  const favs = useSelector((state) => state.favorite.value);
+
   const handleClickLogout = () => {
     logout();
   };
@@ -76,7 +74,10 @@ export default function Header() {
           </li>
           <li className="btn-item">
             <Link to="#" className="btn-link">
-              <FaHeart />
+              <MdOutlineFavoriteBorder />
+              {favs.length > 0 && (
+                <span className="qty-heart">{favs.length}</span>
+              )}
             </Link>
           </li>
           <li className="btn-item">

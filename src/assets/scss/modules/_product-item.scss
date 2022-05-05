@@ -1,4 +1,5 @@
 .details-product {
+  position: relative;
   width: 30%;
   text-align: center;
   padding: 10px 0;
@@ -19,6 +20,16 @@
     font-size: $font-size-lg;
     padding: 10px 0;
   }
+  .btn-favorite {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  .btn-favorite-active{
+    color: red;
+  }  
 }
 .image-product {
   width: 250px;

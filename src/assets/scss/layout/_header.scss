@@ -28,7 +28,16 @@
 .btn-item {
   @extend .item-header;
   width: 40px;
+  position: relative;
+  .qty-heart {
+    position: absolute;
+    top: -5px;
+    left: 3px;
+    z-index: 2;
+    color: red;
+    background-color:  map-get($colors, bg-gray);
+  }
 }
 .btn-sign-in {
-  width:  60px;
+  width:  60px  ;
 }

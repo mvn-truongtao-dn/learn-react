@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { Link, useRouteMatch } from "react-router-dom";
-import { FaSearch, FaUser, FaHeart, FaCartArrowDown } from "react-icons/fa";
+import React from "react";
+import { Link } from "react-router-dom";
+import { FaSearch, FaUser, FaCartArrowDown } from "react-icons/fa";
 import { MdOutlineFavoriteBorder } from "react-icons/md";
 import { FiLogIn } from "react-icons/fi";
 import useAuth from "../../../hooks/userAuth";

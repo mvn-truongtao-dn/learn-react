@@ -1,13 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Rating from "../../../../components/modules/Rating";
 
 export default function DetailsProduct({ item }) {
-  const { title, image, id, price, description } = item;
+  const { title, image, price, description } = item;
   return (
     <div className="flex">
       <div className="details-product">
-        <img className="image-product" src={image}></img>
+        <img className="image-product" src={image} alt={title}></img>
       </div>
       <div className="content-product content-product-deatails">
         <h1 className="name-product">{title}</h1>

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import Truncate from "../../../core/truncate";
 import Rating from "../Rating";
 import { MdFavorite, MdOutlineFavoriteBorder } from "react-icons/md";
@@ -9,7 +9,6 @@ import { toggle } from "../../../store/favSlice";
 export default function ProductItem({ item }) {
   const { title, image, id, price, description } = item;
   const favs = useSelector((state) => state.favorite.value);
-  console.log(favs);
   const dispatch = useDispatch();
 
   const description_truncate = Truncate(description);
@@ -21,7 +20,7 @@ export default function ProductItem({ item }) {
   return (
     <div className="details-product">
       <Link to={`/product/${id}`}>
-        <img className="image-product" src={image}></img>
+        <img className="image-product" src={image} alt={title}></img>
         <div className="content-product">
           <h1 className="name-product">{title}</h1>
           <span className="price-product">{price}</span>

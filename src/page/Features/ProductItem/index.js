@@ -1,23 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Suspense } from "react";
 import { useParams } from "react-router-dom";
+import { apiProductGetDetails } from "../../../api/product/product.api";
 import Loading from "../../../components/modules/Loading";
 // import DetailsProduct from "./DetailsProduct";
-const DetailsProduct = React.lazy(() =>
-  import("./DetailsProduct")
-);
+const DetailsProduct = React.lazy(() => import("./DetailsProduct"));
 
 export default function Product({ listUser }) {
   const { productId } = useParams();
-  console.log(productId);
   const [product, setProduct] = useState();
-
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/" + productId)
-      .then((res) => res.json())
-      .then((json) => setProduct(json));
-  }, []);
-  console.log(product);
+    apiProductGetDetails(productId).then((e) => setProduct(e.data));
+  }, [productId]);
+
   return (
     <>
       {product && (

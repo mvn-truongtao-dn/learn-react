@@ -1,31 +1,28 @@
 import "./App.css";
 import Header from "./components/layouts/Header";
 import Footer from "./components/layouts/Footer";
-import { Link, Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import "./assets/scss/styles.scss";
 import { useEffect, useState } from "react";
 import PrivateRoute from "./core/guards/PrivateRoute";
 import { Suspense } from "react";
 import Loading from "./components/modules/Loading";
 import React from "react";
-import useAuth from "./hooks/userAuth";
+import { apiProductGetList } from "./api/product/product.api";
 const Profile = React.lazy(() => import("./page/Account/Profile"));
 const Features = React.lazy(() => import("./page/Features"));
 const Auth = React.lazy(() => import("./page/Auth"));
 
 function App() {
-  let { isLogged } = useAuth();
   const [listUser, setListUser] = useState([]);
-  const getUser = () => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((json) => setListUser(json));
-  };
+
   useEffect(() => {
-    getUser();
+    apiProductGetList().then((e) => {
+      console.log(e);
+      setListUser(e.data);
+    });
+    console.log(process.env.REACT_APP_TEST);
   }, []);
-  console.log(listUser);
-  console.log(isLogged);
   return (
     <>
       <Header />

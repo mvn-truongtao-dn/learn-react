@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-export default function useField(type,initialState) {
+export default function useField(type, initialState) {
   const [value, setValue] = useState(initialState);
   const onChange = (e) => {
     setValue(e.target.value);

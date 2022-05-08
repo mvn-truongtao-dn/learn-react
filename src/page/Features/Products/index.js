@@ -1,6 +1,4 @@
-import React, { Suspense } from "react";
-import { Route, Switch, useRouteMatch } from "react-router-dom";
-import Loading from "../../../components/modules/Loading";
+import React from "react";
 import ProductItem from "../../../components/modules/ProductItem";
 
 export default function Products({ listUser }) {

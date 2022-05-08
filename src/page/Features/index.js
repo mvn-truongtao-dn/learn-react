@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
-// import Products from "./Products/index";
-// import ProductItem from "./ProductItem/index";
+
 import Home from "./Home";
 import { Suspense } from "react";
 import Loading from "../../components/modules/Loading";
@@ -10,7 +9,7 @@ const ProductItem = React.lazy(() => import("./ProductItem/index"));
 const Abouts = React.lazy(() => import("./Abouts/index"));
 const Sales = React.lazy(() => import("./Sales/index"));
 export default function Features({ listUser }) {
-  const { path, url } = useRouteMatch();
+  const { path } = useRouteMatch();
   console.log(path);
 
   return (
